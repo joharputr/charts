@@ -1,4 +1,5 @@
 import 'package:charts/syncfusion_chart.dart';
+import 'package:charts/tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:syncfusion_flutter_charts/sparkcharts.dart';
@@ -28,7 +29,15 @@ class MyAppState extends State<MyApp> {
                       Navigator.of(context, rootNavigator: true).push(
                           MaterialPageRoute(builder: (context) => ChartApp()));
                     },
-                    child: Text("Syncfusion Chart"))
+                    child: Text("Syncfusion Chart")),
+                FlatButton(
+                    color: Colors.red,
+                    onPressed: () {
+                      Navigator.of(context, rootNavigator: true).push(
+                          MaterialPageRoute(
+                              builder: (context) => Locationstat()));
+                    },
+                    child: Text("Nested Tab bar"))
               ],
             ),
           ),
@@ -37,4 +46,3 @@ class MyAppState extends State<MyApp> {
     );
   }
 }
-
