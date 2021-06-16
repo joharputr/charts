@@ -75,49 +75,60 @@ class _NestedTabBarState extends State<NestedTabBar>
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    return Column(
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TabBar(
-            controller: _nestedTabController,
-            indicatorColor: Colors.orange,
-            labelColor: Colors.orange,
-            unselectedLabelColor: Colors.black54,
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white.withOpacity(0.9),
+          toolbarHeight: 50,
+          bottom: TabBar(
             isScrollable: true,
-            tabs: <Widget>[
+            unselectedLabelColor: Colors.white.withOpacity(0.3),
+            tabs: [
               Tab(
-                text: "Inside Pokhara",
+                child: Text(
+                  "Tab Bar 1 sdssdd sdsd",
+                  style: TextStyle(color: Colors.black),
+                ),
               ),
               Tab(
-                text: "Outside Pokhara",
+                child: Text(
+                  "Tab Bar 1 sdssdd sdsd",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              Tab(
+                child: Text(
+                  "Tab Bar 1 sdssdd sdsd",
+                  style: TextStyle(color: Colors.black),
+                ),
               ),
             ],
           ),
         ),
-        Container(
-          height: screenHeight * 0.70,
-          margin: EdgeInsets.only(left: 16.0, right: 16.0),
-          child: TabBarView(
-            controller: _nestedTabController,
-            children: <Widget>[
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  color: Colors.blueGrey[300],
-                ),
+        body: TabBarView(
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.0),
+                color: Colors.blueGrey[300],
               ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  color: Colors.green[300],
-                ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.0),
+                color: Colors.blueGrey[300],
               ),
-            ],
-          ),
-        )
-      ],
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.0),
+                color: Colors.green[300],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
